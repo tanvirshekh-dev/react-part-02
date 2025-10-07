@@ -32,6 +32,7 @@ export default
             {
                 runs > 100 && <p>Your score is: 100</p>
             }
+            
             <p>Sixes: {sixes}</p>
             <h2>Runs: {runs}</h2>
             <button onClick={handelSingle}>Single</button>

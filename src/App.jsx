@@ -5,8 +5,26 @@ import Batsmen from './Batsmen'
 import Counter from './Counter'
 import './App.css'
 import Bowler from './Bowler'
+import Users from './Users'
+import Friends from './Friends'
+import Posts from './Posts'
+import { Suspense } from 'react'
+
+
+// const fetchFriend = async () => {
+//   const res = await fetch("https://jsonplaceholder.typicode.com/users")
+//   return res.json()
+// }
+
+const fetchPosts = async () => {
+  const res = await fetch("https://jsonplaceholder.typicode.com/posts")
+  return res.json()
+}
+
 
 function App() {
+  // const friendsPromise = fetchFriend();
+  const postPromise = fetchPosts();
 
   function handleClick() {
     alert('Click 01')
@@ -24,6 +42,17 @@ function App() {
   return (
     <>
       <h1>React Core Concept Part 02</h1>
+      <Suspense fallback={<h3>Post are coming soon.....</h3>}>
+        <Posts postPromise={postPromise}></Posts>
+      </Suspense>
+
+      {/* <Suspense fallback={<h3>Our friends is coming and pay the bill...</h3>}>
+        <Friends friendsPromise={friendsPromise}></Friends>
+      </Suspense> */}
+      
+
+      {/* <Users></Users> */}
+
       <Bowler name='Ajgor'></Bowler>
       {/* <Batsmen></Batsmen> */}
       {/* <Counter></Counter> */}
