@@ -1,14 +1,16 @@
 // import { useState } from 'react'
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
+import Calculate from './Calculate'
 import Batsmen from './Batsmen'
-import Counter from './Counter'
+// import Counter from './Counter'
 import './App.css'
 import Bowler from './Bowler'
 import Users from './Users'
 import Friends from './Friends'
 import Posts from './Posts'
 import { Suspense } from 'react'
+import Players from './Players'
 
 
 // const fetchFriend = async () => {
@@ -16,15 +18,17 @@ import { Suspense } from 'react'
 //   return res.json()
 // }
 
-const fetchPosts = async () => {
-  const res = await fetch("https://jsonplaceholder.typicode.com/posts")
-  return res.json()
-}
+// const fetchPosts = async () => {
+//   const res = await fetch("https://jsonplaceholder.typicode.com/posts")
+//   return res.json()
+// }
+
+
 
 
 function App() {
   // const friendsPromise = fetchFriend();
-  const postPromise = fetchPosts();
+  // const postPromise = fetchPosts();
 
   function handleClick() {
     alert('Click 01')
@@ -42,9 +46,16 @@ function App() {
   return (
     <>
       <h1>React Core Concept Part 02</h1>
-      <Suspense fallback={<h3>Post are coming soon.....</h3>}>
+      <Calculate></Calculate>
+
+
+      {/* <Players></Players> */}
+      
+      
+      
+      {/* <Suspense fallback={<h3>Post are coming soon.....</h3>}>
         <Posts postPromise={postPromise}></Posts>
-      </Suspense>
+      </Suspense> */}
 
       {/* <Suspense fallback={<h3>Our friends is coming and pay the bill...</h3>}>
         <Friends friendsPromise={friendsPromise}></Friends>
@@ -53,7 +64,7 @@ function App() {
 
       {/* <Users></Users> */}
 
-      <Bowler name='Ajgor'></Bowler>
+      {/* <Bowler name='Ajgor'></Bowler> */}
       {/* <Batsmen></Batsmen> */}
       {/* <Counter></Counter> */}
 
