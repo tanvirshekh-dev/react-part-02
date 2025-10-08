@@ -4,6 +4,7 @@
 import Calculate from './Calculate'
 import Batsmen from './Batsmen'
 // import Counter from './Counter'
+import Display from './Display'
 import './App.css'
 import Bowler from './Bowler'
 import Users from './Users'
@@ -46,12 +47,10 @@ function App() {
   return (
     <>
       <h1>React Core Concept Part 02</h1>
-      <Calculate></Calculate>
+      <Display></Display>
 
-
+      {/* <Calculate></Calculate> */}
       {/* <Players></Players> */}
-      
-      
       
       {/* <Suspense fallback={<h3>Post are coming soon.....</h3>}>
         <Posts postPromise={postPromise}></Posts>
